@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background-color: #e0e5ec;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Estilo 1: Inset (Côncavo) */
+.icon-box.inset {
+    box-shadow: inset 6px 6px 10px rgba(0,0,0,0.1),
+                inset -6px -6px 10px rgba(255,255,255,0.7);
+}
+
+/* Estilo 2: Ring (Com anel ao redor) */
+.icon-box.ring {
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.1),
+                -6px -6px 12px rgba(255,255,255,0.8),
+                inset 0px 0px 0px 5px #e0e5ec, /* Espaçamento do anel */
+                inset 2px 2px 5px rgba(0,0,0,0.05), /* Sombra interna do anel */
+                inset -2px -2px 5px rgba(255,255,255,0.5);
+}
+
+/* Efeito de clique e foco (como o último ícone da imagem) */
+.icon-box:active, .icon-box.active {
+    transform: scale(0.95);
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.15),
+                inset -4px -4px 8px rgba(255,255,255,0.8);
+}
